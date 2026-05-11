@@ -202,16 +202,6 @@ npm start
 
 ---
 
-## ✅ Checklist antes de ir ao ar
-
-- [ ] Atualizar `SITE.url` em `lib/site.ts` com o domínio definitivo
-- [ ] Substituir o `favicon.svg` pela versão final do logotipo
-- [ ] Adicionar logo PNG em `public/logo.png` (referenciado por JSON-LD)
-- [ ] Adicionar imagens reais dos produtos em `public/` ou CDN
-- [ ] Configurar `verification.google` em `app/layout.tsx` com o código do Search Console
-- [ ] Conectar o formulário de contato a um serviço (Resend, Formspree, etc.)
-- [ ] Validar JSON-LD em [search.google.com/test/rich-results](https://search.google.com/test/rich-results)
-- [ ] Validar acessibilidade com Lighthouse
 
 ---
 
