@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #E30613;
+  --brand-dark: #B0040F;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #fff;
+  color: #111827;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-dark;
+  }
+  .btn-outline {
+    @apply btn border border-ink/15 text-ink hover:border-brand hover:text-brand;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1ebe5a];
+  }
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand;
+  }
+  .h1 { @apply font-serif text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight; }
+  .h2 { @apply font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight; }
+  .h3 { @apply font-serif text-xl sm:text-2xl font-medium leading-snug; }
+  .lead { @apply text-base sm:text-lg text-ink-soft leading-relaxed; }
+}
+
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee-track { display: inline-flex; animation: marquee 30s linear infinite; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  html { scroll-behavior: auto; }
+}
