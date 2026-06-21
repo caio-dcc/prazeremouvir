@@ -1,4 +1,4 @@
-type IconName = "heart" | "home" | "sliders" | "shield" | "tag" | "card" | "ear" | "check" | "star" | "phone" | "calendar" | "map";
+type IconName = "heart" | "home" | "sliders" | "shield" | "tag" | "card" | "ear" | "check" | "star" | "phone" | "calendar" | "map" | "mail";
 
 export function Icon({ name, className = "h-6 w-6" }: { name: IconName; className?: string }) {
   const common = { className, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
@@ -27,5 +27,7 @@ export function Icon({ name, className = "h-6 w-6" }: { name: IconName; classNam
       return <svg {...common}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>;
     case "map":
       return <svg {...common}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
+    case "mail":
+      return <svg {...common}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>;
   }
 }

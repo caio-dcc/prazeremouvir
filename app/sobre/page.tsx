@@ -31,7 +31,7 @@ export default function SobrePage() {
         <div className="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
             <Image
-              src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1200&q=80"
+              src="/images/img-sobre.jpg"
               alt="Equipe da Prazer em Ouvir em atendimento"
               fill
               className="object-cover"

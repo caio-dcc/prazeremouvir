@@ -102,7 +102,7 @@ export default function ContatoPage() {
             >
               <h2 className="h3">Envie sua mensagem</h2>
               <p className="mt-2 text-sm text-ink-soft">
-                Responderemos o mais rápido possível. Para um atendimento imediato, prefira o WhatsApp.
+                Ao preencher os campos abaixo e enviar, seu aplicativo de e-mail padrão será aberto para concluir o envio. Para um atendimento mais ágil, prefira nos chamar no WhatsApp.
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <label className="block">
@@ -111,6 +111,7 @@ export default function ContatoPage() {
                     name="nome"
                     type="text"
                     required
+                    placeholder="Ex: Maria da Silva"
                     className="mt-1 w-full rounded-lg border border-ink/15 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"
                   />
                 </label>
@@ -120,6 +121,7 @@ export default function ContatoPage() {
                     name="telefone"
                     type="tel"
                     required
+                    placeholder="(21) 90000-0000"
                     className="mt-1 w-full rounded-lg border border-ink/15 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"
                   />
                 </label>
@@ -129,6 +131,7 @@ export default function ContatoPage() {
                     name="email"
                     type="email"
                     required
+                    placeholder="seuemail@exemplo.com"
                     className="mt-1 w-full rounded-lg border border-ink/15 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"
                   />
                 </label>
@@ -138,6 +141,7 @@ export default function ContatoPage() {
                     name="mensagem"
                     rows={5}
                     required
+                    placeholder="Escreva sua dúvida, solicitação ou mensagem aqui..."
                     className="mt-1 w-full rounded-lg border border-ink/15 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"
                   />
                 </label>
@@ -150,17 +154,7 @@ export default function ContatoPage() {
               </p>
             </form>
 
-            <div className="overflow-hidden rounded-2xl border border-ink/10">
-              <iframe
-                title="Mapa — Prazer em Ouvir Tijuca"
-                src="https://www.google.com/maps?q=Rua+Conde+de+Bonfim+229+Tijuca+Rio+de+Janeiro&output=embed"
-                width="100%"
-                height="360"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block"
-              />
-            </div>
+
           </div>
         </div>
       </section>

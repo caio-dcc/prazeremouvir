@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DEPOIMENTOS, DIFERENCIAIS, MARCAS, POSTS, PROCESSO, PRODUTOS, SITE } from "@/lib/site";
+import { DEPOIMENTOS, DIFERENCIAIS, MARCAS, PROCESSO, PRODUTOS, SITE } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { SectionHeader } from "@/components/Section";
 import { FaqJsonLd } from "@/components/JsonLd";
@@ -43,7 +43,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-brand to-brand-dark text-white">
         <div className="absolute inset-0 opacity-20" aria-hidden>
           <Image
-            src="https://images.unsplash.com/photo-1559757175-7cb056fba93d?auto=format&fit=crop&w=1600&q=80"
+            src="/images/img-hero-bg.jpg"
             alt=""
             fill
             priority
@@ -72,8 +72,11 @@ export default function HomePage() {
               >
                 <Icon name="calendar" className="h-4 w-4" /> Agende sua consulta grátis
               </a>
-              <Link href="/produtos" className="btn border border-white/40 text-white hover:bg-white/10">
-                Conheça os aparelhos
+              <a href={`https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent(SITE.whatsapp.defaultMessage)}`} target="_blank" rel="noopener noreferrer" className="btn border border-white/40 text-white hover:bg-white/10">
+                Falar com especialista
+              </a>
+              <Link href="/contato" className="btn bg-white text-brand hover:bg-white/90">
+                <Icon name="mail" className="h-4 w-4" /> Enviar E-mail de Contato
               </Link>
             </div>
             <dl className="mt-10 grid grid-cols-3 gap-4 text-sm">
@@ -93,10 +96,11 @@ export default function HomePage() {
           <div className="relative">
             <div className="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/20">
               <Image
-                src="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?auto=format&fit=crop&w=900&q=80"
+                src="/images/pessoa-feliz.png"
                 alt="Fonoaudióloga atendendo paciente em consulta auditiva"
                 fill
                 priority
+                quality={100}
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 500px"
               />
@@ -144,7 +148,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
+                src="/images/img-sobre-home.jpg"
                 alt="Espaço de atendimento da Prazer em Ouvir na Tijuca"
                 fill
                 className="object-cover"
@@ -170,8 +174,8 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/sobre" className="btn-primary">Conheça nossa história</Link>
-              <Link href="/contato" className="btn-outline">Como chegar</Link>
+              <a href={`https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent(SITE.whatsapp.defaultMessage)}`} target="_blank" rel="noopener noreferrer" className="btn-primary">Agendar avaliação</a>
+              <Link href="/contato" className="btn-outline">Ver localização</Link>
             </div>
           </div>
         </div>
@@ -219,9 +223,9 @@ export default function HomePage() {
                 marcas mais respeitadas do mundo.
               </p>
             </div>
-            <Link href="/produtos" className="btn border border-white/30 text-white hover:bg-white hover:text-ink">
-              Ver todos os produtos
-            </Link>
+            <a href={`https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent(SITE.whatsapp.defaultMessage)}`} target="_blank" rel="noopener noreferrer" className="btn border border-white/30 text-white hover:bg-white hover:text-ink">
+              Consultar modelos disponíveis
+            </a>
           </div>
 
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -245,9 +249,9 @@ export default function HomePage() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-brand">{p.categoria}</span>
                   <h3 className="h3 mt-2">{p.nome}</h3>
                   <p className="mt-2 text-sm text-ink-soft leading-relaxed line-clamp-3">{p.descricao}</p>
-                  <Link href={`/produtos#${p.slug}`} className="mt-4 inline-flex text-sm font-semibold text-brand hover:underline">
-                    Saiba mais →
-                  </Link>
+                  <a href={`https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent(SITE.whatsapp.defaultMessage)}`} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex text-sm font-semibold text-brand hover:underline">
+                    Consultar preço →
+                  </a>
                 </div>
               </li>
             ))}
@@ -287,42 +291,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BLOG */}
-      <section className="section">
-        <div className="container-x">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeader
-              eyebrow="Curiosidades"
-              title="Últimas do blog"
-              align="left"
-            />
-            <Link href="/curiosidades" className="btn-outline">Ver todas as curiosidades</Link>
-          </div>
-          <ul className="mt-12 grid gap-6 md:grid-cols-3">
-            {POSTS.map((post) => (
-              <li key={post.slug}>
-                <Link href={`/curiosidades/${post.slug}`} className="group block overflow-hidden rounded-2xl border border-ink/10 bg-white transition hover:shadow-card">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={post.imagem}
-                      alt={post.titulo}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-brand">{post.categoria}</span>
-                    <h3 className="h3 mt-2 group-hover:text-brand">{post.titulo}</h3>
-                    <p className="mt-2 text-sm text-ink-soft line-clamp-3">{post.resumo}</p>
-                    <time dateTime={post.dataISO} className="mt-4 block text-xs text-ink-muted">{post.data}</time>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+
 
       {/* CTA FINAL */}
       <section className="bg-brand text-white">

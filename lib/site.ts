@@ -44,7 +44,6 @@ export const NAV = [
   { href: "/sobre", label: "A Empresa" },
   { href: "/servicos", label: "Serviços" },
   { href: "/produtos", label: "Produtos" },
-  { href: "/curiosidades", label: "Curiosidades" },
   { href: "/contato", label: "Contato" },
 ];
 
@@ -147,7 +146,7 @@ export const PRODUTOS: Produto[] = [
       "Design minimalista e discreto",
     ],
     imagem:
-      "https://placehold.co/900x675/E30613/FFFFFF/png?text=Rexton+Rose&font=lora",
+      "/images/rexton-rose.png",
   },
   {
     slug: "perfect-dry-lux",
@@ -163,7 +162,7 @@ export const PRODUTOS: Produto[] = [
       "Reduz o risco de contaminação viral e bacteriana",
     ],
     imagem:
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80",
+      "/images/img-1.jpg",
   },
   {
     slug: "desumidificador-prazer-em-ouvir",
@@ -177,7 +176,7 @@ export const PRODUTOS: Produto[] = [
       "Prático e econômico",
     ],
     imagem:
-      "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=900&q=80",
+      "/images/img-2.jpg",
   },
   {
     slug: "protetores-auriculares",
@@ -192,7 +191,7 @@ export const PRODUTOS: Produto[] = [
       "Prazo de entrega: 5 dias úteis",
     ],
     imagem:
-      "https://images.unsplash.com/photo-1583912267550-d6c2ac3196c0?auto=format&fit=crop&w=900&q=80",
+      "/images/img-3.jpg",
   },
   {
     slug: "filtro-cerustop",
@@ -206,7 +205,7 @@ export const PRODUTOS: Produto[] = [
       "Compatível com diversos modelos",
     ],
     imagem:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+      "/images/img-4.jpg",
   },
   {
     slug: "baterias-power-one",
@@ -222,54 +221,9 @@ export const PRODUTOS: Produto[] = [
       "Alta durabilidade",
     ],
     imagem:
-      "https://placehold.co/900x675/111827/FFFFFF/png?text=Power+One&font=lora",
+      "/images/power-one.png",
   },
 ];
 
 export const MARCAS = ["Phonak", "Rexton", "Signia", "Power One"];
 
-export type Post = {
-  slug: string;
-  titulo: string;
-  resumo: string;
-  categoria: string;
-  data: string;
-  dataISO: string;
-  imagem: string;
-};
-
-export const POSTS: Post[] = [
-  {
-    slug: "quem-deve-usar-aparelhos-auditivos",
-    titulo: "Quem deve usar aparelhos auditivos?",
-    resumo:
-      "Sinais de que está na hora de avaliar a sua audição e por que o diagnóstico precoce faz tanta diferença.",
-    categoria: "Aparelhos auditivos",
-    data: "6 de fevereiro de 2019",
-    dataISO: "2019-02-06",
-    imagem:
-      "https://images.unsplash.com/photo-1559131397-f94da358f7ca?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    slug: "historia-dos-aparelhos-auditivos",
-    titulo: "A história dos aparelhos auditivos",
-    resumo:
-      "Dos primeiros cornetas acústicas aos aparelhos digitais recarregáveis: uma viagem por mais de 100 anos de evolução.",
-    categoria: "Aparelhos auditivos",
-    data: "6 de fevereiro de 2019",
-    dataISO: "2019-02-06",
-    imagem:
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    slug: "audicao",
-    titulo: "Audição: o sentido que conecta você ao mundo",
-    resumo:
-      "Como a audição funciona, o que causa a perda auditiva e por que cuidar dos seus ouvidos é cuidar da sua qualidade de vida.",
-    categoria: "Audição",
-    data: "8 de março de 2019",
-    dataISO: "2019-03-08",
-    imagem:
-      "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=900&q=80",
-  },
-];

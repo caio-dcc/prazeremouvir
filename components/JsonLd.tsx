@@ -104,38 +104,6 @@ export function ProductJsonLd({
   );
 }
 
-export function ArticleJsonLd({
-  title,
-  description,
-  image,
-  datePublished,
-  slug,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  datePublished: string;
-  slug: string;
-}) {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
-    image,
-    datePublished,
-    author: { "@type": "Organization", name: SITE.name },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.name,
-      logo: { "@type": "ImageObject", url: `${SITE.url}/logo.png` },
-    },
-    mainEntityOfPage: `${SITE.url}/curiosidades/${slug}`,
-  };
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
-  );
-}
 
 export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   const data = {
